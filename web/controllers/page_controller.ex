@@ -6,6 +6,7 @@ defmodule Looooong.PageController do
   end
 
   def short(conn, params) do
-    redirect conn, external: Base.decode64(params["extended_url"])
+    {:ok, url} = Base.decode64(params["extended_url"])
+    redirect conn, external: url
   end
 end
