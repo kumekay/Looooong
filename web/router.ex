@@ -16,9 +16,15 @@ defmodule Looooong.Router do
   scope "/", Looooong do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    # get "/", PageController, :index
+    get ":extended_url", PageController, :short
   end
 
+  scope "/api", Looooong do
+    pipe_through :api
+
+    resources "/extend", ExtendController, only: [:create]
+  end
   # Other scopes may use custom stacks.
   # scope "/api", Looooong do
   #   pipe_through :api
