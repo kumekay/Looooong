@@ -58,11 +58,11 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
-config :apas_server, Looooong.Endpoint,
+config :looooong, Looooong.Endpoint,
   secret_key_base: System.get_env("SECRET_KEY_BASE")
 
 # Configure your database
-config :apas_server, Looooong.Repo,
+config :looooong, Looooong.Repo,
   adapter: Ecto.Adapters.Postgres,
   url: System.get_env("DATABASE_URL"),
   pool_size: 20
